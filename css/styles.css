@@ -15,6 +15,7 @@
     --cloud: #f4f4fd;
     --green: #31d0aa;
     --grey: #2e2f42;
+    --dark-grey-op4: rgba(46, 47, 66, 0.4);
     --dark-grey: rgba(46, 47, 66, 0.7);
 
     /* Others */
@@ -251,15 +252,12 @@ img {
     content: '';
     position: absolute;
     bottom: -1px;
-    /* left: 50%; */
     left: 0;
     transform: translate(-50%);
     width: 100%;
     height: 4px;
-    /* border-radius: var(--radius-sm); */
     border-radius: 2px;
     background-color: #404bbf;
-    /* background: transparent; */
 }
 
 .nav-menu-link.current::after {
@@ -301,7 +299,6 @@ img {
     padding: 188px 0;
     background: linear-gradient(var(--dark-grey), var(--dark-grey)),
     url('../images/bg/hero-bg.jpg') center/cover no-repeat var(--grey);
-    /* background-color: var(--primary-cl); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -321,10 +318,9 @@ img {
     display: block;
     height: 56px;
     margin: 0 auto;
-    min-width: 169px;
-    min-height: 56px;
+    /* min-width: 169px; */
+    /* min-height: 56px; */
     padding: 16px 32px;
-    /* border: 1px solid transparent; */
     background-color: var(--iris);
     font-weight: 500;
     line-height: 1.5;
@@ -401,6 +397,7 @@ img {
 }
 
 .team-img {}
+
 .team-wrapper {
     padding: 32px 0;
 }
@@ -422,7 +419,6 @@ img {
     color: var(--slate);
 }
 /*  #endregion Our Team */
-
 
 /*  #region  Our Portfolio */
 .portfolio {
@@ -451,7 +447,6 @@ img {
 }
 
 .portfolio-item {
-    /* border: 1px solid var(--cornflower); */
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -496,8 +491,6 @@ img {
 .portfolio-item:hover .overlay-desc {
     transform: translateY(0);
 }
-
-
 /*  #endregion Portfolio Overlay*/
 
 /*  #region Footer */
@@ -552,4 +545,259 @@ img {
 .footer-socials .socials-link:focus {
     background: var(--green);
 }
+
+.footer-right {
+    max-width: 453px;
+    width: 100%;
+}
+
+.newsletter-form {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.newsletter-field {
+    max-width: 264px;
+    width: 100%;
+}
+
+.newsletter-input {
+    width: 100%;
+    height: 40px;
+    padding: 8px 16px;
+    color: var(--white);
+    background: transparent;
+    border: 1px solid var(--white);
+    outline: 1px solid transparent;
+    outline-offset: -1px;
+    border-radius: 4px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    transition: outline-color var(--transition);
+}
+
+.newsletter-input:focus {
+    outline-color: var(--accent);
+}
+
+.newsletter-input::placeholder {
+    color: currentColor;
+}
+
+.newsletter-btn {
+    width: 165px;
+    height: 40px;
+    padding: 3px 24px;
+    gap: 16px;
+}
 /*  #endregion Footer */
+
+/*  #region Modal */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+
+    background: var(--dark-grey-op4);
+
+    transition: opacity 150ms ease-in, visibility 150ms ease-in;
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition-delay: 300ms;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+    width: 100%;
+    max-width: 408px;
+    min-height: 584px;
+    padding: 24px;
+    padding-top: 72px;
+
+    background: #fcfcfc;;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--primary-shadow);
+
+    transition: opacity 300ms cubic-bezier(0.68, -0.55, 0.27, 1.55),
+        transform 300ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition-delay: 300ms;
+}
+
+.backdrop.is-hidden .modal {
+    transform: translateX(-50%) translateY(-50%) scale(0.3);
+    opacity: 0;
+    transition-delay: 0ms;
+}
+
+.modal-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--grey);
+    background: var(--cornflower);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-circle);
+    transition: color var(--transition), background-color var(--transition);
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+    color: var(--white);
+    background: var(--accent);
+}
+
+.modal-btn-icon {
+    fill: currentColor;
+}
+
+.modal-caption {
+    margin-bottom: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: var(--grey);
+}
+
+/* #endregion Modal */
+/* #region Feedback form  */
+.feedback-form {}
+
+.feedback-field {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.feedback-label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+}
+
+.feedback-input {
+    width: 100%;
+    height: 40px;
+    padding: 8px 38px;
+    border: 1px solid var(--dark-grey-op4);
+    border-radius: var(--radius-sm);
+    outline: 1px solid transparent;
+    outline-offset: -1px;
+    transition: outline var(--transition);
+}
+
+.feedback-input:focus {
+    outline-color: var(--iris);
+}
+
+.feedback-icon {
+    position: absolute;
+    left: 16px;
+    bottom: 8px;
+    fill: var(--grey);
+    transition: fill var(--transition);
+}
+
+.feedback-input:focus+.feedback-icon {
+    fill: var(--iris);
+}
+
+.feedback-comment {
+    width: 100%;
+    height: 120px;
+    padding: 8px 16px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: var(--dark-grey-op4);
+    border: 1px solid var(--dark-grey-op4);
+    border-radius: var(--radius-sm);
+    outline: 1px solid transparent;
+    outline-offset: -1px;
+    resize: none;
+    transition: outline var(--transition);
+}
+
+.feedback-comment:focus {
+    outline-color: var(--iris);
+}
+
+.feedback-comment::placeholder {
+    color: currentColor;
+}
+
+.feedback-agreement {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    margin-bottom: 24px;
+}
+
+.feedback-checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    color: transparent;
+    border-radius: 2px;
+    border: 1px solid var(--dark-grey-op4);
+
+    transition: color var(--transition), border-color var(--transition),
+        background-color var(--transition), box-shadow var(--transition);
+}
+
+input[type='checkbox']:focus-visible+.feedback-checkbox {
+    box-shadow: 0 0 0 4px rgba(64, 75, 191, 0.25);
+}
+
+input[type='checkbox']:checked+.feedback-checkbox {
+    color: var(--cloud);
+    border-color: transparent;
+    background: var(--accent);
+}
+
+.feedback-checkbox-icon {
+    fill: currentColor;
+}
+
+.feedback-desc {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+}
+
+.feedback-link {
+    line-height: 1.33;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: var(--iris);
+}
+
+.feedback-btn {
+    margin: 0 auto;
+}
+
+/* #endregion Feedback form */
