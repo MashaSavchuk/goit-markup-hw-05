@@ -638,16 +638,11 @@ img {
     min-height: 584px;
     padding: 24px;
     padding-top: 72px;
-
     background: #fcfcfc;;
     border-radius: var(--radius-sm);
-    /* box-shadow: var(--primary-shadow); */
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
-
-    /* transition: opacity 300ms cubic-bezier(0.68, -0.55, 0.27, 1.55),
-        transform 300ms cubic-bezier(0.68, -0.55, 0.27, 1.55); */
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transition-delay: 300ms;
+    /* transition-delay: 300ms; */
 }
 
 .backdrop.is-hidden .modal {
@@ -795,17 +790,16 @@ img {
 }
 
 .feedback-checkbox {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 16px;
     height: 16px;
     color: transparent;
     border-radius: 2px;
-    border: 1px solid var(--dark-grey-op4);
-
-    transition: color var(--transition), border-color var(--transition),
-        background-color var(--transition), box-shadow var(--transition);
+    border: 1px solid var(--dark-grey-op4);   
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill: transparent;
 }
 
 input[type='checkbox']:focus-visible+.feedback-checkbox {
@@ -813,9 +807,13 @@ input[type='checkbox']:focus-visible+.feedback-checkbox {
 }
 
 input[type='checkbox']:checked+.feedback-checkbox {
-    color: var(--cloud);
+    /* color: var(--cloud);
     border-color: transparent;
-    background: var(--accent);
+    background: var(--accent); */
+
+    background-color: #404bbf;
+    border: none;
+    fill: #F4F4FD;
 }
 
 .feedback-checkbox-icon {
@@ -833,7 +831,7 @@ input[type='checkbox']:checked+.feedback-checkbox {
     line-height: 1.33;
     text-decoration: underline;
     text-decoration-skip-ink: none;
-    color: var(--iris);
+    color: #4d5ae5;
 }
 
 .feedback-btn {
