@@ -607,26 +607,20 @@ img {
     position: fixed;
     top: 0;
     left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    /* opacity: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
     visibility: hidden;
-    pointer-events: none; */
-    background: var(--dark-grey-op4);
+    pointer-events: none;
+    background-color: var(--dark-grey-op4);
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.backdrop.is-hidden {
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-    transition-delay: 300ms;
-}
-/* .backdrop.is-open {
+.backdrop.is-open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-} */
+}
 
 .modal {
     position: absolute;
@@ -642,13 +636,6 @@ img {
     border-radius: var(--radius-sm);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    /* transition-delay: 300ms; */
-}
-
-.backdrop.is-hidden .modal {
-    transform: translateX(-50%) translateY(-50%) scale(0.3);
-    opacity: 0;
-    transition-delay: 0ms;
 }
 
 .modal-btn {
@@ -707,11 +694,6 @@ img {
     color: #8e8f99;
 }
 
-/* .feedback-label {
-    display: block;
-    margin-bottom: 4px;
-} */
-
 .feedback-input-icon {
     position: relative;
 }
@@ -728,7 +710,6 @@ img {
 }
 
 .feedback-input:focus {
-    /* outline-color: var(--iris); */
     border-color: #4D5AE5;
 }
 
@@ -743,7 +724,6 @@ img {
 }
 
 .feedback-input:focus+.feedback-icon {
-    /* fill: var(--iris); */
     fill: #4D5AE5;
 }
 
@@ -768,7 +748,6 @@ img {
 }
 
 .feedback-comment:focus {
-    /* outline-color: var(--iris); */
     border-color: #4D5AE5;
 }
 
@@ -780,7 +759,6 @@ img {
     margin-bottom: 24px;
 }
 .feedback-agreement {
-    /* display: flex; */
     align-items: center;
     gap: 8px;
     margin-top: 16px;
@@ -815,23 +793,11 @@ input[type='checkbox']:checked+.feedback-checkbox {
     color: var(--cloud);
     border-color: transparent;
     background: var(--accent);
-
-    /* background-color: #404bbf;
-    border: none;
-    fill: #F4F4FD; */
 }
 
 .feedback-checkbox-icon {
     fill: currentColor;
 }
-
-/* .feedback-desc {
-    display: inline-flex;
-    font-size: 12px;
-    line-height: 1.17;
-    letter-spacing: 0.04em;
-    color: #8e8f99;
-} */
 
 .feedback-link {
     line-height: 1.33;
