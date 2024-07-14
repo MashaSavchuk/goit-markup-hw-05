@@ -648,7 +648,8 @@
     <!-- #endregion -->
 
     <!-- #region Modal -->
-    <div class="backdrop is-hidden" data-modal>
+    <div class="backdrop">
+      <!-- <div class="backdrop is-hidden" data-modal> -->
       <div class="modal">
         <button type="button" class="modal-btn" data-modal-close="">
           <svg class="modal-btn-icon" width="8" height="8">
@@ -659,7 +660,7 @@
           <strong>Leave your contacts and we will call you back</strong>
         </p>
         <form class="feedback-form" name="feedbackForm">
-          <div class="feedback-form-parts">
+          <div class="modal-form-field">
             <label class="feedback-field" for="user-name">
               <span class="feedback-label">Name</span></label
             >
@@ -675,7 +676,7 @@
               </svg>
             </div>
           </div>
-          <div class="feedback-form-parts">
+          <div class="modal-form-field">
             <label class="feedback-field" for="phone">
               <span class="feedback-label">Phone</span></label
             >
@@ -691,7 +692,7 @@
               </svg>
             </div>
           </div>
-          <div class="feedback-form-parts">
+          <div class="modal-form-field">
             <label class="feedback-field" for="email">
               <span class="feedback-label">Email</span>
             </label>
@@ -707,33 +708,38 @@
               </svg>
             </div>
           </div>
-          <label class="feedback-field" for="comment">
-            <span class="feedback-label">Comment</span>
-            <textarea
-              class="feedback-comment"
-              id="comment"
-              name="userComment"
-              rows="5"
-              placeholder="Text input"
-            ></textarea>
-          </label>
-          <label class="feedback-agreement">
+          <div class="modal-form-field field-comment">
+            <label class="feedback-field" for="user-comment">
+              <span class="feedback-label">Comment</span>
+              <textarea
+                class="feedback-comment"
+                id="user-comment"
+                name="user-comment"
+                rows="5"
+                placeholder="Text input"
+              ></textarea>
+            </label>
+          </div>
+          <div class="modal-form-agreement">
             <input
               class="visually-hidden"
+              id="user-privacy"
               type="checkbox"
-              name="userAgreement"
-              value="false"
+              name="user-privacy"
+              value="true"
             />
-            <span class="feedback-checkbox">
-              <svg class="feedback-checkbox-icon" width="10" height="8">
-                <use href="./images/icons.svg#check"></use>
-              </svg>
-            </span>
-            <span class="feedback-desc">
-              I accept the terms and conditions of the
-              <a class="feedback-link" href="#">Privacy Policy</a>
-            </span>
-          </label>
+            <label class="feedback-agreement" for="user-privacy">
+              <span class="feedback-checkbox">
+                <svg class="feedback-checkbox-icon" width="10" height="8">
+                  <use href="./images/icons.svg#check"></use>
+                </svg>
+              </span>
+              <span class="feedback-desc">
+                I accept the terms and conditions of the
+                <a class="feedback-link" href="#">Privacy Policy</a>
+              </span>
+            </label>
+          </div>
 
           <button class="btn feedback-btn" type="submit">Send</button>
         </form>
