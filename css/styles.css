@@ -804,12 +804,11 @@ img {
     fill: transparent;
 }
 
-input[type='checkbox']:focus-visible+.feedback-checkbox {
-    box-shadow: 0 0 0 4px rgba(64, 75, 191, 0.25);
-        
+input[type='checkbox']:checked+.feedback-agreement>.feedback-checkbox {
     background-color: #404bbf;
     border: none;
     fill: #F4F4FD;
+    box-shadow: 0 0 0 4px rgba(64, 75, 191, 0.25);
 }
 
 input[type='checkbox']:checked+.feedback-checkbox {
