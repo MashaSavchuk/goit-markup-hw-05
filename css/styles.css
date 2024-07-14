@@ -780,7 +780,7 @@ img {
     margin-bottom: 24px;
 }
 .feedback-agreement {
-    display: flex;
+    /* display: flex; */
     align-items: center;
     gap: 8px;
     margin-top: 16px;
@@ -825,13 +825,13 @@ input[type='checkbox']:checked+.feedback-checkbox {
     fill: currentColor;
 }
 
-.feedback-desc {
+/* .feedback-desc {
     display: inline-flex;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
-}
+} */
 
 .feedback-link {
     line-height: 1.33;
