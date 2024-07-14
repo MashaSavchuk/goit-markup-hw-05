@@ -763,11 +763,13 @@ img {
     outline: 1px solid transparent;
     outline-offset: -1px;
     resize: none;
-    transition: outline var(--transition);
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: transparent;
 }
 
 .feedback-comment:focus {
-    outline-color: var(--iris);
+    /* outline-color: var(--iris); */
+    border-color: #4D5AE5;
 }
 
 .feedback-comment::placeholder {
@@ -804,16 +806,20 @@ img {
 
 input[type='checkbox']:focus-visible+.feedback-checkbox {
     box-shadow: 0 0 0 4px rgba(64, 75, 191, 0.25);
-}
-
-input[type='checkbox']:checked+.feedback-checkbox {
-    /* color: var(--cloud);
-    border-color: transparent;
-    background: var(--accent); */
-
+        
     background-color: #404bbf;
     border: none;
     fill: #F4F4FD;
+}
+
+input[type='checkbox']:checked+.feedback-checkbox {
+    color: var(--cloud);
+    border-color: transparent;
+    background: var(--accent);
+
+    /* background-color: #404bbf;
+    border: none;
+    fill: #F4F4FD; */
 }
 
 .feedback-checkbox-icon {
@@ -821,6 +827,7 @@ input[type='checkbox']:checked+.feedback-checkbox {
 }
 
 .feedback-desc {
+    display: inline-flex;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
