@@ -609,24 +609,24 @@ img {
     left: 0;
     min-width: 100%;
     min-height: 100%;
-    opacity: 0;
+    /* opacity: 0;
     visibility: hidden;
-    pointer-events: none;
+    pointer-events: none; */
     background: var(--dark-grey-op4);
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* .backdrop.is-hidden {
+.backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
     transition-delay: 300ms;
-} */
-.backdrop.is-open {
+}
+/* .backdrop.is-open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-}
+} */
 
 .modal {
     position: absolute;
@@ -705,11 +705,6 @@ img {
     position: relative;
     display: block;
     width: 100%;
-    margin-bottom: 8px;
-}
-
-.feedback-label {
-    display: block;
     margin-bottom: 4px;
     font-size: 12px;
     line-height: 1.17;
@@ -717,6 +712,14 @@ img {
     color: #8e8f99;
 }
 
+/* .feedback-label {
+    display: block;
+    margin-bottom: 4px;
+} */
+
+.feedback-input-icon {
+    position: relative;
+}
 .feedback-input {
     width: 100%;
     height: 40px;
